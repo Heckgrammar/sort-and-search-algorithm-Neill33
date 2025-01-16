@@ -9,15 +9,38 @@ namespace compare_algorithm
             Random n = new Random();
             Stopwatch sw = new Stopwatch();
 
+            int[] array = CreateArray(n);
 
+            if (array == null)
+            {
+                Console.WriteLine("Array has not been created");
+                return;
+            }
         }
-        static int[] CreateArray(int size, Random r)
+        static int[] CreateArray(Random r)
         {
-            
+            Console.WriteLine("Enter the length of your array: ");
+            int arraylength = Convert.ToInt32(Console.ReadLine());
+            int[] numbers = new int[arraylength];
+
+            for (int i = 0; i < arraylength; i++)
+            {
+                Console.WriteLine($"Enter number {i+1}: ");
+                numbers[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Your array: ");
+            foreach (int number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+            return numbers;
         }
+
         static void menu()
         {
 
+            Console.WriteLine("Enter what search you want to do: 1:Linear search, 2:Binary search, 3:Bubble sort, 4:Merge sort, 9 ");
+            string option = Console.ReadLine();
         }
         
         static void BubbleSort(int[] a)
@@ -80,12 +103,12 @@ namespace compare_algorithm
         }
         static bool LinearSearch(int[] a, int numToFind)
         {
-
+            return true;
         }
         static bool BinarySearch(int[] a, int numToFind)
         {
-            
+            return true;
         }
-            
+
     }
 }
